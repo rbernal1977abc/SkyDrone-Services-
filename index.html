@@ -119,111 +119,126 @@
       color: #020b2d;
     }
     
-    /* Portfolio Gallery Styles */
-    .portfolio-gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
+    /* Events List Styles */
+    .events-container {
       margin-top: 40px;
     }
     
-    .event-item {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .events-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+    
+    .event-item-simple {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #ffd000;
       transition: all 0.3s ease;
     }
     
-    .event-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    .event-item-simple:hover {
+      background: #f0f0f0;
+      transform: translateX(5px);
     }
     
-    .event-image {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .event-placeholder {
-      width: 100%;
-      height: 250px;
-      background: linear-gradient(45deg, #0b0f2b, #020b2d);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .event-placeholder i {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      color: #ffd000;
-    }
-    
-    .event-info {
-      padding: 25px;
-    }
-    
-    .event-info h3 {
-      color: #020b2d;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-    }
-    
-    .event-info p {
-      color: #666;
-      margin-bottom: 15px;
-    }
-    
-    .event-details {
+    .event-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #eee;
+      margin-bottom: 10px;
+    }
+    
+    .event-title {
+      font-weight: 600;
+      color: #020b2d;
+      font-size: 1.1rem;
     }
     
     .drone-count {
       background: #ffd000;
       color: #000;
-      padding: 5px 15px;
+      padding: 4px 12px;
       border-radius: 20px;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     .event-year {
-      color: #777;
+      color: #666;
       font-size: 0.9rem;
+      margin-top: 5px;
     }
     
-    /* Video Link Button */
-    .video-link {
+    /* Dropdown Styles */
+    .events-dropdown {
+      margin: 40px 0;
+      text-align: center;
+    }
+    
+    .dropdown-toggle {
+      background: #020b2d;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #ff0000;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      margin-top: 10px;
+      gap: 10px;
       transition: all 0.3s ease;
     }
     
-    .video-link:hover {
-      background: #cc0000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    .dropdown-toggle:hover {
+      background: #0b0f2b;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(2, 11, 45, 0.3);
+    }
+    
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      background: white;
+      border-radius: 8px;
+      margin-top: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: max-height 0.5s ease;
+    }
+    
+    .dropdown-content.active {
+      max-height: 500px;
+    }
+    
+    .all-events-list {
+      list-style: none;
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .all-events-list li {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .all-events-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .event-name {
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .event-stat {
+      font-size: 0.9rem;
+      color: #666;
     }
     
     /* Contact Info Styling */
@@ -527,10 +542,6 @@
         gap: 30px;
       }
       
-      .portfolio-gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
       .resource-links {
         flex-direction: row;
         justify-content: center;
@@ -538,6 +549,10 @@
       
       .user-input-area {
         padding: 25px;
+      }
+      
+      .all-events-list li {
+        padding: 18px 20px;
       }
     }
     
@@ -553,10 +568,6 @@
       
       .grid { 
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      }
-      
-      .portfolio-gallery {
-        grid-template-columns: repeat(3, 1fr);
       }
       
       .footer-content {
@@ -581,6 +592,17 @@
       .footer-phone {
         text-align: right;
       }
+      
+      .events-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      .event-item-simple {
+        margin-bottom: 0;
+        height: 100%;
+      }
     }
     
     /* Large Desktop */
@@ -589,8 +611,8 @@
         gap: 35px;
       }
       
-      .portfolio-gallery {
-        gap: 35px;
+      .events-list {
+        gap: 25px;
       }
     }
   </style>
@@ -635,119 +657,86 @@
 
 <section>
   <h2>Proven Track Record</h2>
-  <div class="portfolio-gallery">
-    <!-- MassKara Festival 2024 -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-star"></i>
-        <p>Upload MassKara Festival 2024 Image</p>
-      </div>
-      <div class="event-info">
-        <h3>MassKara Festival 2024</h3>
-        <p>One of the Philippines' biggest festivals featuring 550 drones in spectacular formation</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
+  
+  <!-- First 3 Featured Events -->
+  <div class="events-container">
+    <h3 style="text-align:center; color:#020b2d; margin-bottom:30px;">Featured Events</h3>
+    <ul class="events-list">
+      <li class="event-item-simple">
+        <div class="event-header">
+          <div class="event-title">MassKara Festival 2024</div>
           <span class="drone-count">550 Drones</span>
-          <span class="event-year">2024</span>
         </div>
-      </div>
-    </div>
-    
-    <!-- Solaire Anniversary Shows -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-crown"></i>
-        <p>Upload Solaire Anniversary Image</p>
-      </div>
-      <div class="event-info">
-        <h3>Solaire Anniversary Shows</h3>
-        <p>Premium entertainment resort anniversary celebration with 200-300 drones</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
+        <div class="event-year">2024 • Bacolod City, Philippines</div>
+      </li>
+      
+      <li class="event-item-simple">
+        <div class="event-header">
+          <div class="event-title">Solaire Anniversary Shows</div>
           <span class="drone-count">200-300 Drones</span>
-          <span class="event-year">Multiple Events</span>
         </div>
-      </div>
-    </div>
-    
-    <!-- Disney+ Launch -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-film"></i>
-        <p>Upload Disney+ Launch Image</p>
-      </div>
-      <div class="event-info">
-        <h3>Disney+ Launch</h3>
-        <p>Streaming service launch event featuring iconic Disney characters in the sky</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
+        <div class="event-year">Multiple Events • Entertainment City, Manila</div>
+      </li>
+      
+      <li class="event-item-simple">
+        <div class="event-header">
+          <div class="event-title">Disney+ Launch Philippines</div>
           <span class="drone-count">200 Drones</span>
-          <span class="event-year">2022</span>
         </div>
-      </div>
-    </div>
+        <div class="event-year">2022 • National Launch Event</div>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Dropdown for All Events -->
+  <div class="events-dropdown">
+    <button class="dropdown-toggle" id="dropdownToggle">
+      <i class="fas fa-chevron-down"></i> View All Events
+    </button>
     
-    <!-- SEA Games Ceremonies -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-trophy"></i>
-        <p>Upload SEA Games Image</p>
-      </div>
-      <div class="event-info">
-        <h3>SEA Games Ceremonies</h3>
-        <p>International sporting event opening and closing ceremonies</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
-          <span class="drone-count">200 Drones</span>
-          <span class="event-year">2022</span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- AFP Anniversary -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-shield-alt"></i>
-        <p>Upload AFP Anniversary Image</p>
-      </div>
-      <div class="event-info">
-        <h3>Armed Forces of the Philippines Anniversary</h3>
-        <p>Military celebration with patriotic themes and formations</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
-          <span class="drone-count">150 Drones</span>
-          <span class="event-year">2023</span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- SM Mall of Asia Sky Launch -->
-    <div class="event-item">
-      <div class="event-placeholder">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Upload SM MOA Image</p>
-      </div>
-      <div class="event-info">
-        <h3>SM Mall of Asia Sky Launch 2025</h3>
-        <p>Grand opening event for one of Asia's largest shopping malls</p>
-        <a href="#" class="video-link">
-          <i class="fab fa-youtube"></i> Watch Video
-        </a>
-        <div class="event-details">
-          <span class="drone-count">180 Drones</span>
-          <span class="event-year">2025</span>
-        </div>
-      </div>
+    <div class="dropdown-content" id="dropdownContent">
+      <ul class="all-events-list">
+        <li>
+          <span class="event-name">MassKara Festival 2024</span>
+          <span class="event-stat">550 drones • 2024</span>
+        </li>
+        <li>
+          <span class="event-name">Solaire Anniversary Shows</span>
+          <span class="event-stat">200-300 drones • Multiple</span>
+        </li>
+        <li>
+          <span class="event-name">Disney+ Launch</span>
+          <span class="event-stat">200 drones • 2022</span>
+        </li>
+        <li>
+          <span class="event-name">SEA Games Ceremonies</span>
+          <span class="event-stat">200 drones • 2022</span>
+        </li>
+        <li>
+          <span class="event-name">Armed Forces of the Philippines Anniversary</span>
+          <span class="event-stat">150 drones • 2023</span>
+        </li>
+        <li>
+          <span class="event-name">SM Mall of Asia Sky Launch 2025</span>
+          <span class="event-stat">180 drones • 2025</span>
+        </li>
+        <li>
+          <span class="event-name">Binondo Chinese New Year 2025</span>
+          <span class="event-stat">120 drones • 2025</span>
+        </li>
+        <li>
+          <span class="event-name">Palarong Pambansa 2025</span>
+          <span class="event-stat">160 drones • 2025</span>
+        </li>
+        <li>
+          <span class="event-name">Corporate Product Launch: Tech Company X</span>
+          <span class="event-stat">100 drones • 2024</span>
+        </li>
+        <li>
+          <span class="event-name">University Centennial Celebration</span>
+          <span class="event-stat">90 drones • 2023</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -848,6 +837,24 @@
       alert('Mobile menu will be added here. For now, please use the contact links.');
     });
     
+    // Dropdown Toggle Functionality
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const dropdownContent = document.getElementById('dropdownContent');
+    const dropdownIcon = dropdownToggle.querySelector('i');
+    
+    dropdownToggle.addEventListener('click', function() {
+      dropdownContent.classList.toggle('active');
+      
+      // Toggle icon
+      if (dropdownContent.classList.contains('active')) {
+        dropdownIcon.className = 'fas fa-chevron-up';
+        dropdownToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Hide All Events';
+      } else {
+        dropdownIcon.className = 'fas fa-chevron-down';
+        dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i> View All Events';
+      }
+    });
+    
     // MushBot AI Chat Functionality
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userInput');
@@ -870,7 +877,7 @@
         
         "contact": "Contact Information:\n• Phone: +63 917 637 4581 (Mushroom)\n• Email: roland.pang888@gmail.com\n• Service Area: Philippines-wide\n• Response Time: Within 24 hours",
         
-        "events": "We've served major events including:\n• MassKara Festival 2024 – 550 drones\n• Solaire Anniversary Shows – 200-300 drones\n• Disney+ Launch – 200 drones\n• SEA Games Ceremonies – 200 drones\n• AFP Anniversary – 150 drones\n• SM Mall of Asia Sky Launch 2025\n• Binondo Chinese New Year 2025\n• Palarong Pambansa 2025",
+        "events": "We've served major events including:\n• MassKara Festival 2024 – 550 drones\n• Solaire Anniversary Shows – 200-300 drones\n• Disney+ Launch – 200 drones\n• SEA Games Ceremonies – 200 drones\n• AFP Anniversary – 150 drones\n• SM Mall of Asia Sky Launch 2025 – 180 drones\n• Binondo Chinese New Year 2025 – 120 drones\n• Palarong Pambansa 2025 – 160 drones",
         
         "process": "Our Process:\n1. Consultation & Concept Design\n2. Custom Animation Creation\n3. Technical Planning & Safety Checks\n4. On-site Setup & Testing\n5. Live Performance\n6. Post-event Support",
         
@@ -990,22 +997,6 @@
       link.addEventListener('click', function(e) {
         console.log('Opening email client for:', this.getAttribute('href'));
       });
-    });
-    
-    // Video links - Add actual YouTube URLs here
-    const videoLinks = document.querySelectorAll('.video-link');
-    const youtubeUrls = [
-      "https://youtube.com/shorts/VIDEO_ID_1", // MassKara
-      "https://youtube.com/shorts/VIDEO_ID_2", // Solaire
-      "https://youtube.com/shorts/VIDEO_ID_3", // Disney+
-      "https://youtube.com/shorts/VIDEO_ID_4", // SEA Games
-      "https://youtube.com/shorts/VIDEO_ID_5", // AFP
-      "https://youtube.com/shorts/VIDEO_ID_6"  // SM MOA
-    ];
-    
-    videoLinks.forEach((link, index) => {
-      link.href = youtubeUrls[index] || "#";
-      link.target = "_blank";
     });
     
     // Smooth scrolling
