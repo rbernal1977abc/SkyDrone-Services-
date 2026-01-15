@@ -567,7 +567,7 @@
       }
       
       .grid { 
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        grid-template-columns: repeat(4, 1fr); 
       }
       
       .footer-content {
@@ -652,6 +652,12 @@
     <div class="card"><h3 style="color:#ffffff;">Customized Show Design</h3><p style="color:#ffffff;">Animations, storylines, and branding designed specifically for your event.</p></div>
     <div class="card"><h3 style="color:#ffffff;">Scalable Fleet Size</h3><p style="color:#ffffff;">From 50 to 500+ drones depending on your vision and venue.</p></div>
     <div class="card"><h3 style="color:#ffffff;">Comprehensive Safety Protocols</h3><p style="color:#ffffff;">Certified pilots, redundancy systems, and real‑time monitoring.</p></div>
+    
+    <!-- New Boxes Added -->
+    <div class="card"><h3 style="color:#ffffff;">Professionally Trained Team</h3><p style="color:#ffffff;">Our team combines years of industry experience with continuous professional training.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">CAAP Certified & Licensed</h3><p style="color:#ffffff;">Fully compliant with Civil Aviation Authority of the Philippines regulations and standards.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Teamwork & Collaboration</h3><p style="color:#ffffff;">Seamless coordination between pilots, technicians, and creative teams for flawless execution.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Customer-Centric Approach</h3><p style="color:#ffffff;">We prioritize your vision and ensure complete satisfaction from planning to execution.</p></div>
   </div>
 </section>
 
@@ -871,7 +877,7 @@
         
         "why drone shows": "Why Drone Shows Captivate Audiences:\n1. Unforgettable Visual Impact: Thousands of points of light—perfectly choreographed—form dynamic shapes, symbols, and animations\n2. Limitless Creative Possibilities: From brand logos to animated characters and narrative sequences\n3. Eco-Friendly & Safe: No smoke, no debris, sustainable alternative to fireworks\n4. High Engagement & Shareability: Spectators naturally capture and share shows on social media",
         
-        "our approach": "Our Approach:\nWe blend aerospace engineering, creative design, and flawless execution to craft outdoor drone shows that elevate your event.\n\nWhat Sets Us Apart:\n• Advanced Formation Technology\n• Brilliant LED Illumination\n• Customized Show Design\n• Scalable Fleet Size (50-500+ drones)\n• Comprehensive Safety Protocols",
+        "our approach": "Our Approach:\nWe blend aerospace engineering, creative design, and flawless execution to craft outdoor drone shows that elevate your event.\n\nWhat Sets Us Apart:\n• Advanced Formation Technology\n• Brilliant LED Illumination\n• Customized Show Design\n• Scalable Fleet Size (50-500+ drones)\n• Comprehensive Safety Protocols\n• Professionally Trained Team\n• CAAP Certified & Licensed\n• Teamwork & Collaboration\n• Customer-Centric Approach",
         
         "pricing": "Pricing depends on:\n• Number of drones (50-500+)\n• Show duration (3-10 minutes)\n• Customization level\n• Location and logistics\n\nFor accurate pricing, please contact Mushroom directly at +63 917 637 4581 or email roland.pang888@gmail.com",
         
@@ -908,7 +914,7 @@
         return knowledgeBase.responses["why drone shows"];
       }
       
-      if (lowerMessage.includes("approach") || lowerMessage.includes("technology") || lowerMessage.includes("safety")) {
+      if (lowerMessage.includes("approach") || lowerMessage.includes("technology") || lowerMessage.includes("safety") || lowerMessage.includes("team") || lowerMessage.includes("caap") || lowerMessage.includes("certified")) {
         return knowledgeBase.responses["our approach"];
       }
       
