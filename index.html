@@ -149,6 +149,24 @@
       gap: 8px;
     }
     
+    /* "Our Approach" section - All white text */
+    .dark-section {
+      background: #0b0f2b; 
+      color: #fff;
+    }
+    
+    .dark-section .card {
+      background: #1a1f3c;
+    }
+    
+    .dark-section .card h3 {
+      color: #ffffff !important; /* Force white color */
+    }
+    
+    .dark-section .card p {
+      color: #ffffff !important; /* Force white color */
+    }
+    
     /* Footer - Updated with requested text */
     footer { 
       background: #000; 
@@ -189,6 +207,21 @@
       font-weight: 600;
     }
     
+    /* Make phone number in footer visible (not just on hover) */
+    .footer-phone {
+      color: #ffd000 !important;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      font-size: 1rem;
+      padding: 8px 0;
+    }
+    
+    .footer-phone i {
+      margin-right: 8px;
+    }
+    
     .social-icons {
       margin: 20px 0;
       display: flex;
@@ -204,6 +237,27 @@
     
     .social-icons a:hover {
       color: #ffd000;
+    }
+    
+    /* Email link styling */
+    .email-link {
+      color: #ffd000 !important;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: rgba(255, 208, 0, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 208, 0, 0.3);
+    }
+    
+    .email-link:hover {
+      background: rgba(255, 208, 0, 0.2);
     }
     
     /* Tablet Styles */
@@ -238,6 +292,10 @@
         flex-direction: row;
         justify-content: center;
         gap: 30px;
+      }
+      
+      .email-link {
+        margin-top: 20px;
       }
     }
     
@@ -277,6 +335,10 @@
       .social-icons {
         margin: 0;
         justify-content: flex-start;
+      }
+      
+      .footer-phone {
+        text-align: right;
       }
     }
     
@@ -341,7 +403,7 @@
   <p>Reimagining the Sky: The Future of Outdoor Entertainment</p>
   <p>We transform the night sky into a living canvas of light, motion, and emotion through precision‑engineered drone light shows.</p>
   <a class="cta" href="tel:+639176374581">
-    <i class="fas fa-phone-alt"></i> Call Mushroom: +63 917 637 4581
+    <i class="fas fa-phone-alt"></i> Call Mushoom: +63 917 637 4581
   </a>
 </header>
 
@@ -355,15 +417,16 @@
   </div>
 </section>
 
-<section style="background:#0b0f2b; color:#fff;">
+<!-- "Our Approach" section with all white text -->
+<section class="dark-section">
   <h2>Our Approach</h2>
-  <p style="text-align:center; max-width:900px; margin:auto; padding:0 10px;">We blend aerospace engineering, creative design, and flawless execution to deliver bold, emotionally resonant drone shows.</p>
+  <p style="text-align:center; max-width:900px; margin:auto; padding:0 10px; color:#fff;">We blend aerospace engineering, creative design, and flawless execution to deliver bold, emotionally resonant drone shows.</p>
   <div class="grid" style="margin-top:40px;">
-    <div class="card" style="background:#1a1f3c;"><h3>Advanced Formation Technology</h3><p>Intelligent navigation systems ensure smooth transitions and perfect choreography.</p></div>
-    <div class="card" style="background:#1a1f3c;"><h3>Brilliant LED Illumination</h3><p>High‑intensity, full‑spectrum LEDs visible from long distances.</p></div>
-    <div class="card" style="background:#1a1f3c;"><h3>Customized Show Design</h3><p>Animations, storylines, and branding designed specifically for your event.</p></div>
-    <div class="card" style="background:#1a1f3c;"><h3>Scalable Fleet Size</h3><p>From 50 to 500+ drones depending on your vision and venue.</p></div>
-    <div class="card" style="background:#1a1f3c;"><h3>Comprehensive Safety Protocols</h3><p>Certified pilots, redundancy systems, and real‑time monitoring.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Advanced Formation Technology</h3><p style="color:#ffffff;">Intelligent navigation systems ensure smooth transitions and perfect choreography.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Brilliant LED Illumination</h3><p style="color:#ffffff;">High‑intensity, full‑spectrum LEDs visible from long distances.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Customized Show Design</h3><p style="color:#ffffff;">Animations, storylines, and branding designed specifically for your event.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Scalable Fleet Size</h3><p style="color:#ffffff;">From 50 to 500+ drones depending on your vision and venue.</p></div>
+    <div class="card"><h3 style="color:#ffffff;">Comprehensive Safety Protocols</h3><p style="color:#ffffff;">Certified pilots, redundancy systems, and real‑time monitoring.</p></div>
   </div>
 </section>
 
@@ -391,10 +454,11 @@
   <p style="margin-bottom:25px;">Bring your vision to life with an unforgettable drone light show anywhere in the Philippines.</p>
   <div class="contact-info">
     <a class="cta" href="tel:+639176374581">
-      <i class="fas fa-phone-alt"></i> Call Mushroom Now
+      <i class="fas fa-phone-alt"></i> Call Mushoom Now
     </a>
-    <a href="mailto:info@skydroneservices.ph" style="color:#ffd000;">
-      <i class="fas fa-envelope"></i> Email Us
+    <!-- Email link that will prompt to open Outlook or browser -->
+    <a href="mailto:Mushoom.pang888@gmail.com?subject=Drone%20Light%20Show%20Inquiry&body=Hello%20Mushoom,%20I%20am%20interested%20in%20your%20drone%20light%20show%20services." class="email-link">
+      <i class="fas fa-envelope"></i> Email: Mushoom.pang888@gmail.com
     </a>
   </div>
 </section>
@@ -413,7 +477,8 @@
     <div class="copyright-section">
       <p class="copyright">© 2025 by Dimax Technologies Center</p>
       <p class="powered-by">Powered and secured by RP8</p>
-      <a href="tel:+639176374581" style="color:#ffd000; display:block; margin-top:10px;">
+      <!-- Phone number in footer - now clearly visible -->
+      <a href="tel:+639176374581" class="footer-phone">
         <i class="fas fa-phone"></i> +63 917 637 4581
       </a>
     </div>
@@ -421,13 +486,49 @@
 </footer>
 
 <script>
-  // Mobile menu toggle functionality
   document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     
-    // If needed for future mobile navigation
+    // Mobile menu toggle functionality
     menuToggle.addEventListener('click', function() {
       alert('Mobile menu will be added here. For now, please use the contact links.');
+    });
+    
+    // Phone link functionality - Will open dialer on mobile devices
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // On mobile devices, this will automatically open the phone dialer
+        // No additional code needed as tel: protocol handles this
+        console.log('Opening phone dialer for:', this.getAttribute('href'));
+        
+        // For desktop browsers, show an alert
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          if (!confirm('This will open your phone app. Would you like to call ' + this.getAttribute('href').replace('tel:', '') + '?')) {
+            e.preventDefault();
+          }
+        }
+      });
+    });
+    
+    // Email link functionality
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // The mailto: protocol will automatically prompt the user to choose an email client
+        // On mobile, it might open Gmail, Outlook, or the default mail app
+        // On desktop, it will open the default mail client (Outlook, Apple Mail, etc.) or ask to choose one
+        
+        console.log('Opening email client for:', this.getAttribute('href'));
+        
+        // For tracking purposes (optional)
+        const email = 'Mushoom.pang888@gmail.com';
+        const subject = 'Drone Light Show Inquiry';
+        const body = 'Hello Mushoom, I am interested in your drone light show services.';
+        
+        // You could add analytics here if needed
+        // Example: trackEmailClick(email);
+      });
     });
     
     // Smooth scrolling for anchor links
@@ -451,6 +552,16 @@
     const copyrightYear = document.querySelector('.copyright');
     if(copyrightYear) {
       copyrightYear.innerHTML = copyrightYear.innerHTML.replace('2025', new Date().getFullYear());
+    }
+    
+    // Mobile detection
+    function isMobileDevice() {
+      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+    
+    // If on mobile, add a class to body for mobile-specific styling
+    if (isMobileDevice()) {
+      document.body.classList.add('is-mobile');
     }
   });
 </script>
