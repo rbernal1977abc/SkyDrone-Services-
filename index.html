@@ -43,9 +43,10 @@
       padding: 0 10px;
     }
     
+    /* Updated CTA Button - Yellow border, white background */
     .cta { 
       display: inline-block;
-      background: #ffd000; 
+      background: #ffffff; 
       color: #000; 
       padding: 14px 28px; 
       font-weight: 700; 
@@ -54,13 +55,14 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       border: 2px solid #ffd000;
+      box-shadow: 0 4px 15px rgba(255, 208, 0, 0.2);
     }
     
     .cta:hover {
-      background: transparent;
-      color: #ffd000;
+      background: #ffd000;
+      color: #000;
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(255, 208, 0, 0.4);
     }
     
     /* Mobile Menu Toggle (Hidden by default) */
@@ -117,17 +119,89 @@
       color: #020b2d;
     }
     
-    .portfolio { 
-      list-style: none;
-      padding: 0;
+    /* Portfolio Gallery Styles */
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
     }
     
-    .portfolio li { 
-      margin-bottom: 15px; 
-      padding: 12px 15px;
-      background: #f5f5f5;
-      border-radius: 8px;
-      border-left: 4px solid #ffd000;
+    .event-item {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .event-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .event-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .event-placeholder {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(45deg, #0b0f2b, #020b2d);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .event-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #ffd000;
+    }
+    
+    .event-info {
+      padding: 25px;
+    }
+    
+    .event-info h3 {
+      color: #020b2d;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    
+    .event-info p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    .event-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .drone-count {
+      background: #ffd000;
+      color: #000;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .event-year {
+      color: #777;
+      font-size: 0.9rem;
     }
     
     /* Contact Info Styling */
@@ -135,7 +209,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       margin: 20px 0;
     }
     
@@ -160,14 +234,168 @@
     }
     
     .dark-section .card h3 {
-      color: #ffffff !important; /* Force white color */
+      color: #ffffff !important;
     }
     
     .dark-section .card p {
-      color: #ffffff !important; /* Force white color */
+      color: #ffffff !important;
     }
     
-    /* Footer - Updated with requested text */
+    /* Resources Section */
+    .resources {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    
+    .resources h3 {
+      color: #020b2d;
+      margin-bottom: 20px;
+    }
+    
+    .resource-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .resource-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 2px solid #020b2d;
+      color: #020b2d;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .resource-btn:hover {
+      background: #020b2d;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .resource-btn.ai-chat {
+      border-color: #ffd000;
+      color: #000;
+    }
+    
+    .resource-btn.ai-chat:hover {
+      background: #ffd000;
+    }
+    
+    .resource-btn.download {
+      border-color: #4CAF50;
+      color: #2E7D32;
+    }
+    
+    .resource-btn.download:hover {
+      background: #4CAF50;
+      color: white;
+    }
+    
+    /* MushBot AI Chat Interface */
+    .mushbot-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 40px 0;
+      overflow: hidden;
+      border: 2px solid #ffd000;
+    }
+    
+    .mushbot-header {
+      background: linear-gradient(to right, #020b2d, #0b0f2b);
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .mushbot-avatar {
+      width: 50px;
+      height: 50px;
+      background: #ffd000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+    }
+    
+    .mushbot-body {
+      padding: 25px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .mushbot-message {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .mushbot-message:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      border-width: 10px 10px 10px 0;
+      border-style: solid;
+      border-color: transparent #f5f5f5 transparent transparent;
+    }
+    
+    .mushbot-message h4 {
+      color: #020b2d;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .user-input-area {
+      padding: 20px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .user-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    .send-btn {
+      background: #020b2d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    
+    .send-btn:hover {
+      background: #0b0f2b;
+    }
+    
+    /* Footer - Updated */
     footer { 
       background: #000; 
       color: #fff; 
@@ -207,7 +435,7 @@
       font-weight: 600;
     }
     
-    /* Make phone number in footer visible (not just on hover) */
+    /* Make phone number in footer visible */
     .footer-phone {
       color: #ffd000 !important;
       text-decoration: none;
@@ -220,23 +448,6 @@
     
     .footer-phone i {
       margin-right: 8px;
-    }
-    
-    .social-icons {
-      margin: 20px 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .social-icons a {
-      color: white;
-      font-size: 1.3rem;
-      transition: color 0.3s ease;
-    }
-    
-    .social-icons a:hover {
-      color: #ffd000;
     }
     
     /* Email link styling */
@@ -294,8 +505,17 @@
         gap: 30px;
       }
       
-      .email-link {
-        margin-top: 20px;
+      .portfolio-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .resource-links {
+        flex-direction: row;
+        justify-content: center;
+      }
+      
+      .user-input-area {
+        padding: 25px;
       }
     }
     
@@ -311,6 +531,10 @@
       
       .grid { 
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      }
+      
+      .portfolio-gallery {
+        grid-template-columns: repeat(3, 1fr);
       }
       
       .footer-content {
@@ -332,11 +556,6 @@
         padding-top: 0;
       }
       
-      .social-icons {
-        margin: 0;
-        justify-content: flex-start;
-      }
-      
       .footer-phone {
         text-align: right;
       }
@@ -347,47 +566,9 @@
       .grid { 
         gap: 35px;
       }
-    }
-    
-    /* Mobile Landscape Optimization */
-    @media (max-height: 500px) and (orientation: landscape) {
-      header {
-        padding: 30px 15px;
-      }
       
-      header h1 {
-        font-size: 1.8rem;
-      }
-      
-      .cta {
-        padding: 10px 20px;
-      }
-    }
-    
-    /* High-Resolution Displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .cta {
-        font-weight: 600;
-      }
-      
-      .card {
-        box-shadow: 0 10px 30px rgba(0,0,0,.1);
-      }
-    }
-    
-    /* Print Styles */
-    @media print {
-      .cta, .social-icons {
-        display: none;
-      }
-      
-      body {
-        color: #000;
-      }
-      
-      .card {
-        box-shadow: none;
-        border: 1px solid #ddd;
+      .portfolio-gallery {
+        gap: 35px;
       }
     }
   </style>
@@ -403,7 +584,7 @@
   <p>Reimagining the Sky: The Future of Outdoor Entertainment</p>
   <p>We transform the night sky into a living canvas of light, motion, and emotion through precision‑engineered drone light shows.</p>
   <a class="cta" href="tel:+639176374581">
-    <i class="fas fa-phone-alt"></i> Call Mushoom: +63 917 637 4581
+    <i class="fas fa-phone-alt"></i> Call Mushroom: +63 917 637 4581
   </a>
 </header>
 
@@ -432,16 +613,53 @@
 
 <section>
   <h2>Proven Track Record</h2>
-  <ul class="portfolio">
-    <li>MassKara Festival 2024 – 550 drones</li>
-    <li>Solaire Anniversary Shows – 200–300 drones</li>
-    <li>Disney+ Launch – 200 drones</li>
-    <li>SEA Games Ceremonies – 200 drones</li>
-    <li>Armed Forces of the Philippines Anniversary – 150 drones</li>
-    <li>SM Mall of Asia Sky Launch 2025</li>
-    <li>Binondo Chinese New Year 2025</li>
-    <li>Palarong Pambansa 2025</li>
-  </ul>
+  <div class="portfolio-gallery">
+    <!-- Event items with image placeholders -->
+    <div class="event-item">
+      <div class="event-placeholder">
+        <i class="fas fa-star"></i>
+        <p>Upload MassKara Festival 2024 Image</p>
+      </div>
+      <div class="event-info">
+        <h3>MassKara Festival 2024</h3>
+        <p>One of the Philippines' biggest festivals featuring 550 drones in spectacular formation</p>
+        <div class="event-details">
+          <span class="drone-count">550 Drones</span>
+          <span class="event-year">2024</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="event-item">
+      <div class="event-placeholder">
+        <i class="fas fa-crown"></i>
+        <p>Upload Solaire Anniversary Image</p>
+      </div>
+      <div class="event-info">
+        <h3>Solaire Anniversary Shows</h3>
+        <p>Premium entertainment resort anniversary celebration with 200-300 drones</p>
+        <div class="event-details">
+          <span class="drone-count">200-300 Drones</span>
+          <span class="event-year">Multiple Events</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="event-item">
+      <div class="event-placeholder">
+        <i class="fas fa-film"></i>
+        <p>Upload Disney+ Launch Image</p>
+      </div>
+      <div class="event-info">
+        <h3>Disney+ Launch</h3>
+        <p>Streaming service launch event featuring iconic Disney characters in the sky</p>
+        <div class="event-details">
+          <span class="drone-count">200 Drones</span>
+          <span class="event-year">2022</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section style="background:#f7f7f7;">
@@ -449,16 +667,67 @@
   <p style="text-align:center; max-width:900px; margin:auto; padding:0 10px;">We deliver premium‑quality drone light shows with competitive local pricing—without compromising safety, creativity, or impact.</p>
 </section>
 
+<!-- Resources Section -->
+<section>
+  <div class="resources">
+    <h3>Resources & Customer Service</h3>
+    <div class="resource-links">
+      <!-- PowerPoint Download Link -->
+      <a href="https://drive.google.com/your-file-link-here" class="resource-btn download" target="_blank" download>
+        <i class="fas fa-file-powerpoint"></i> Download PowerPoint Presentation
+      </a>
+      
+      <!-- AI Chat Assistant -->
+      <a href="#mushbot" class="resource-btn ai-chat">
+        <i class="fas fa-robot"></i> Chat with MushBot AI Assistant
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MushBot AI Chat Interface -->
+<section id="mushbot">
+  <h2>MushBot: AI Customer Service Assistant</h2>
+  <div class="mushbot-container">
+    <div class="mushbot-header">
+      <div class="mushbot-avatar">M</div>
+      <div>
+        <h3 style="margin:0; color:white;">MushBot</h3>
+        <p style="margin:0; font-size:0.9rem; color:#ccc;">AI Assistant for SkyDrone Services</p>
+      </div>
+    </div>
+    
+    <div class="mushbot-body" id="chatMessages">
+      <div class="mushbot-message">
+        <h4><i class="fas fa-robot"></i> MushBot:</h4>
+        <p>Hello! I'm MushBot, your AI assistant for SkyDrone Services. I can answer questions about our drone light shows, pricing, and services. Here's what I know:</p>
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li>A New Era of Aerial Storytelling</li>
+          <li>Why Drone Shows Captivate Audiences</li>
+          <li>Our Approach to drone shows</li>
+          <li>Event planning and pricing</li>
+        </ul>
+        <p style="margin-top:10px;">What would you like to know about our drone light shows?</p>
+      </div>
+    </div>
+    
+    <div class="user-input-area">
+      <input type="text" class="user-input" id="userInput" placeholder="Ask me about drone shows..." maxlength="200">
+      <button class="send-btn" id="sendBtn">Send</button>
+    </div>
+  </div>
+</section>
+
 <section style="text-align:center;">
   <h2>Let's Illuminate Your Story</h2>
   <p style="margin-bottom:25px;">Bring your vision to life with an unforgettable drone light show anywhere in the Philippines.</p>
   <div class="contact-info">
     <a class="cta" href="tel:+639176374581">
-      <i class="fas fa-phone-alt"></i> Call Mushoom Now
+      <i class="fas fa-phone-alt"></i> Call Mushroom Now
     </a>
     <!-- Email link that will prompt to open Outlook or browser -->
-    <a href="mailto:Mushoom.pang888@gmail.com?subject=Drone%20Light%20Show%20Inquiry&body=Hello%20Mushoom,%20I%20am%20interested%20in%20your%20drone%20light%20show%20services." class="email-link">
-      <i class="fas fa-envelope"></i> Email: Mushoom.pang888@gmail.com
+    <a href="mailto:roland.pang888@gmail.com?subject=Drone%20Light%20Show%20Inquiry&body=Hello%20Mushroom,%20I%20am%20interested%20in%20your%20drone%20light%20show%20services." class="email-link">
+      <i class="fas fa-envelope"></i> Email: roland.pang888@gmail.com
     </a>
   </div>
 </section>
@@ -467,19 +736,14 @@
   <div class="footer-content">
     <div class="footer-main">
       <p>SkyDrone Services – Precision, Innovation & Spectacle Above Every Crowd</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+      <!-- Social media icons removed as requested -->
     </div>
     <div class="copyright-section">
       <p class="copyright">© 2025 by Dimax Technologies Center</p>
       <p class="powered-by">Powered and secured by RP8</p>
       <!-- Phone number in footer - now clearly visible -->
       <a href="tel:+639176374581" class="footer-phone">
-        <i class="fas fa-phone"></i> +63 917 637 4581
+        <i class="fas fa-phone"></i> Call Mushroom: +63 917 637 4581
       </a>
     </div>
   </div>
@@ -494,15 +758,134 @@
       alert('Mobile menu will be added here. For now, please use the contact links.');
     });
     
-    // Phone link functionality - Will open dialer on mobile devices
+    // MushBot AI Chat Functionality
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    
+    // AI Knowledge Base
+    const knowledgeBase = {
+      greetings: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
+      farewells: ["bye", "goodbye", "see you", "thanks", "thank you"],
+      
+      // AI Reference Information
+      responses: {
+        "new era": "A New Era of Aerial Storytelling: Outdoor drone shows transform the night sky into a living canvas—where light, motion, and technology merge to create breathtaking visual experiences. These performances are more than entertainment; they are immersive stories told through synchronized fleets of precision-engineered drones.",
+        
+        "why drone shows": "Why Drone Shows Captivate Audiences:\n1. Unforgettable Visual Impact: Thousands of points of light—perfectly choreographed—form dynamic shapes, symbols, and animations\n2. Limitless Creative Possibilities: From brand logos to animated characters and narrative sequences\n3. Eco-Friendly & Safe: No smoke, no debris, sustainable alternative to fireworks\n4. High Engagement & Shareability: Spectators naturally capture and share shows on social media",
+        
+        "our approach": "Our Approach:\nWe blend aerospace engineering, creative design, and flawless execution to craft outdoor drone shows that elevate your event.\n\nWhat Sets Us Apart:\n• Advanced Formation Technology\n• Brilliant LED Illumination\n• Customized Show Design\n• Scalable Fleet Size (50-500+ drones)\n• Comprehensive Safety Protocols",
+        
+        "pricing": "Pricing depends on:\n• Number of drones (50-500+)\n• Show duration (3-10 minutes)\n• Customization level\n• Location and logistics\n\nFor accurate pricing, please contact Mushroom directly at +63 917 637 4581 or email roland.pang888@gmail.com",
+        
+        "contact": "Contact Information:\n• Phone: +63 917 637 4581 (Mushroom)\n• Email: roland.pang888@gmail.com\n• Service Area: Philippines-wide\n• Response Time: Within 24 hours",
+        
+        "events": "We've served major events including:\n• MassKara Festival 2024 – 550 drones\n• Solaire Anniversary Shows – 200-300 drones\n• Disney+ Launch – 200 drones\n• SEA Games Ceremonies – 200 drones\n• AFP Anniversary – 150 drones",
+        
+        "process": "Our Process:\n1. Consultation & Concept Design\n2. Custom Animation Creation\n3. Technical Planning & Safety Checks\n4. On-site Setup & Testing\n5. Live Performance\n6. Post-event Support",
+        
+        "default": "I can help you with information about:\n• Drone show capabilities and benefits\n• Pricing and packages\n• Event planning process\n• Safety and technical specifications\n• Past projects and portfolio\n\nPlease ask a specific question or type 'pricing', 'contact', 'process', or 'events' for detailed information."
+      }
+    };
+    
+    // Function to get AI response
+    function getAIResponse(userMessage) {
+      const lowerMessage = userMessage.toLowerCase();
+      
+      // Check for greetings
+      if (knowledgeBase.greetings.some(greet => lowerMessage.includes(greet))) {
+        return "Hello! Welcome to SkyDrone Services. How can I assist you with drone light show information today?";
+      }
+      
+      // Check for farewells
+      if (knowledgeBase.farewells.some(farewell => lowerMessage.includes(farewell))) {
+        return "Thank you for chatting with MushBot! For direct assistance, please contact Mushroom at +63 917 637 4581. Have a great day!";
+      }
+      
+      // Check specific topics
+      if (lowerMessage.includes("new era") || lowerMessage.includes("storytelling")) {
+        return knowledgeBase.responses["new era"];
+      }
+      
+      if (lowerMessage.includes("why") || lowerMessage.includes("captivate") || lowerMessage.includes("benefit")) {
+        return knowledgeBase.responses["why drone shows"];
+      }
+      
+      if (lowerMessage.includes("approach") || lowerMessage.includes("technology") || lowerMessage.includes("safety")) {
+        return knowledgeBase.responses["our approach"];
+      }
+      
+      if (lowerMessage.includes("price") || lowerMessage.includes("cost") || lowerMessage.includes("how much")) {
+        return knowledgeBase.responses["pricing"];
+      }
+      
+      if (lowerMessage.includes("contact") || lowerMessage.includes("phone") || lowerMessage.includes("email") || lowerMessage.includes("mushroom")) {
+        return knowledgeBase.responses["contact"];
+      }
+      
+      if (lowerMessage.includes("event") || lowerMessage.includes("portfolio") || lowerMessage.includes("past")) {
+        return knowledgeBase.responses["events"];
+      }
+      
+      if (lowerMessage.includes("process") || lowerMessage.includes("how it works") || lowerMessage.includes("procedure")) {
+        return knowledgeBase.responses["process"];
+      }
+      
+      // Default response
+      return knowledgeBase.responses["default"];
+    }
+    
+    // Function to add message to chat
+    function addMessage(message, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'mushbot-message';
+      
+      if (isUser) {
+        messageDiv.innerHTML = `<h4><i class="fas fa-user"></i> You:</h4><p>${message}</p>`;
+        messageDiv.style.background = '#e3f2fd';
+        messageDiv.style.marginLeft = '20px';
+        messageDiv.style.borderLeft = '3px solid #2196F3';
+      } else {
+        messageDiv.innerHTML = `<h4><i class="fas fa-robot"></i> MushBot:</h4><p>${message.replace(/\n/g, '<br>')}</p>`;
+      }
+      
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Send message function
+    function sendMessage() {
+      const message = userInput.value.trim();
+      if (message === '') return;
+      
+      // Add user message
+      addMessage(message, true);
+      
+      // Clear input
+      userInput.value = '';
+      
+      // Simulate AI thinking
+      setTimeout(() => {
+        const aiResponse = getAIResponse(message);
+        addMessage(aiResponse, false);
+      }, 500);
+    }
+    
+    // Event listeners for chat
+    sendBtn.addEventListener('click', sendMessage);
+    
+    userInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+    
+    // Phone link functionality
     const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
     phoneLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // On mobile devices, this will automatically open the phone dialer
-        // No additional code needed as tel: protocol handles this
         console.log('Opening phone dialer for:', this.getAttribute('href'));
         
-        // For desktop browsers, show an alert
         if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           if (!confirm('This will open your phone app. Would you like to call ' + this.getAttribute('href').replace('tel:', '') + '?')) {
             e.preventDefault();
@@ -515,23 +898,11 @@
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     emailLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // The mailto: protocol will automatically prompt the user to choose an email client
-        // On mobile, it might open Gmail, Outlook, or the default mail app
-        // On desktop, it will open the default mail client (Outlook, Apple Mail, etc.) or ask to choose one
-        
         console.log('Opening email client for:', this.getAttribute('href'));
-        
-        // For tracking purposes (optional)
-        const email = 'Mushoom.pang888@gmail.com';
-        const subject = 'Drone Light Show Inquiry';
-        const body = 'Hello Mushoom, I am interested in your drone light show services.';
-        
-        // You could add analytics here if needed
-        // Example: trackEmailClick(email);
       });
     });
     
-    // Smooth scrolling for anchor links
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -548,20 +919,10 @@
       });
     });
     
-    // Add current year to copyright (optional)
+    // Update copyright year
     const copyrightYear = document.querySelector('.copyright');
     if(copyrightYear) {
       copyrightYear.innerHTML = copyrightYear.innerHTML.replace('2025', new Date().getFullYear());
-    }
-    
-    // Mobile detection
-    function isMobileDevice() {
-      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    }
-    
-    // If on mobile, add a class to body for mobile-specific styling
-    if (isMobileDevice()) {
-      document.body.classList.add('is-mobile');
     }
   });
 </script>
