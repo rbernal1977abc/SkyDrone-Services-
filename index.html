@@ -2,31 +2,347 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>SkyDrone Services | Drone Light Shows Philippines</title>
   <meta name="description" content="SkyDrone Services delivers world-class outdoor drone light shows in the Philippines. Eco-friendly, safe, and unforgettable aerial storytelling." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; color:#111; line-height:1.6; }
-    header { background: linear-gradient(to bottom, #000, #020b2d); color:#fff; padding:80px 20px; text-align:center; }
-    header h1 { font-size:3rem; margin-bottom:10px; }
-    header p { font-size:1.2rem; max-width:900px; margin:0 auto 30px; }
-    .cta { background:#ffd000; color:#000; padding:15px 30px; font-weight:700; border-radius:6px; text-decoration:none; }
-    section { padding:70px 20px; max-width:1200px; margin:auto; }
-    h2 { font-size:2.3rem; margin-bottom:25px; text-align:center; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; }
-    .card { background:#f7f7f7; padding:25px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-    .portfolio li { margin-bottom:10px; }
-    footer { background:#000; color:#fff; padding:50px 20px; text-align:center; }
-    footer a { color:#ffd000; text-decoration:none; font-weight:bold; }
+    /* Mobile-First Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      color: #111; 
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Header - Mobile Responsive */
+    header { 
+      background: linear-gradient(to bottom, #000, #020b2d); 
+      color: #fff; 
+      padding: 40px 15px;
+      text-align: center;
+      position: relative;
+    }
+    
+    header h1 { 
+      font-size: 2.2rem; 
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    
+    header p { 
+      font-size: 1rem; 
+      max-width: 100%;
+      margin: 0 auto 25px;
+      padding: 0 10px;
+    }
+    
+    .cta { 
+      display: inline-block;
+      background: #ffd000; 
+      color: #000; 
+      padding: 14px 28px; 
+      font-weight: 700; 
+      border-radius: 8px; 
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid #ffd000;
+    }
+    
+    .cta:hover {
+      background: transparent;
+      color: #ffd000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3);
+    }
+    
+    /* Mobile Menu Toggle (Hidden by default) */
+    .mobile-menu-toggle {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    /* Sections - Mobile Responsive */
+    section { 
+      padding: 50px 15px; 
+      max-width: 1200px; 
+      margin: auto;
+      width: 100%;
+    }
+    
+    h2 { 
+      font-size: 1.8rem; 
+      margin-bottom: 25px; 
+      text-align: center;
+      line-height: 1.4;
+    }
+    
+    /* Grid - Mobile Responsive */
+    .grid { 
+      display: grid; 
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    
+    .card { 
+      background: #f7f7f7; 
+      padding: 25px; 
+      border-radius: 12px; 
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #020b2d;
+    }
+    
+    .portfolio { 
+      list-style: none;
+      padding: 0;
+    }
+    
+    .portfolio li { 
+      margin-bottom: 15px; 
+      padding: 12px 15px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      border-left: 4px solid #ffd000;
+    }
+    
+    /* Contact Info Styling */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .contact-info a {
+      color: #ffd000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Footer - Updated with requested text */
+    footer { 
+      background: #000; 
+      color: #fff; 
+      padding: 40px 15px;
+      text-align: center;
+      border-top: 3px solid #ffd000;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-main {
+      margin-bottom: 25px;
+    }
+    
+    .footer-main p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    .copyright-section {
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+    
+    .copyright, .powered-by {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin: 5px 0;
+    }
+    
+    .powered-by {
+      color: #ffd000;
+      font-weight: 600;
+    }
+    
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: #ffd000;
+    }
+    
+    /* Tablet Styles */
+    @media (min-width: 768px) {
+      header { 
+        padding: 60px 20px; 
+      }
+      
+      header h1 { 
+        font-size: 2.8rem; 
+      }
+      
+      header p { 
+        font-size: 1.1rem; 
+        max-width: 900px;
+      }
+      
+      section { 
+        padding: 60px 20px; 
+      }
+      
+      h2 { 
+        font-size: 2.3rem; 
+      }
+      
+      .grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
+      }
+      
+      .contact-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+      }
+    }
+    
+    /* Desktop Styles */
+    @media (min-width: 1024px) {
+      header { 
+        padding: 80px 20px; 
+      }
+      
+      header h1 { 
+        font-size: 3rem; 
+      }
+      
+      .grid { 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+      }
+      
+      .footer-main {
+        margin-bottom: 0;
+        text-align: left;
+      }
+      
+      .copyright-section {
+        text-align: right;
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      
+      .social-icons {
+        margin: 0;
+        justify-content: flex-start;
+      }
+    }
+    
+    /* Large Desktop */
+    @media (min-width: 1200px) {
+      .grid { 
+        gap: 35px;
+      }
+    }
+    
+    /* Mobile Landscape Optimization */
+    @media (max-height: 500px) and (orientation: landscape) {
+      header {
+        padding: 30px 15px;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .cta {
+        padding: 10px 20px;
+      }
+    }
+    
+    /* High-Resolution Displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .cta {
+        font-weight: 600;
+      }
+      
+      .card {
+        box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      .cta, .social-icons {
+        display: none;
+      }
+      
+      body {
+        color: #000;
+      }
+      
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
+  <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  
   <h1>SkyDrone Services</h1>
   <p>Reimagining the Sky: The Future of Outdoor Entertainment</p>
   <p>We transform the night sky into a living canvas of light, motion, and emotion through precision‑engineered drone light shows.</p>
-  <a class="cta" href="tel:+639176374581">Call Mushroom: +63 917 637 4581</a>
+  <a class="cta" href="tel:+639176374581">
+    <i class="fas fa-phone-alt"></i> Call Roland: +63 917 637 4581
+  </a>
 </header>
 
 <section>
@@ -35,19 +351,19 @@
     <div class="card"><h3>Unforgettable Visual Impact</h3><p>Thousands of synchronized lights form breathtaking shapes, animations, and symbols in the night sky.</p></div>
     <div class="card"><h3>Limitless Creative Possibilities</h3><p>From logos to animated characters and full storytelling sequences—every show is customized.</p></div>
     <div class="card"><h3>Eco‑Friendly & Safe</h3><p>No smoke, no debris, no explosions. A sustainable alternative to fireworks.</p></div>
-    <div class="card"><h3>High Engagement & Shareability</h3><p>Drone shows naturally go viral, extending your event’s reach far beyond the venue.</p></div>
+    <div class="card"><h3>High Engagement & Shareability</h3><p>Drone shows naturally go viral, extending your event's reach far beyond the venue.</p></div>
   </div>
 </section>
 
 <section style="background:#0b0f2b; color:#fff;">
   <h2>Our Approach</h2>
-  <p style="text-align:center; max-width:900px; margin:auto;">We blend aerospace engineering, creative design, and flawless execution to deliver bold, emotionally resonant drone shows.</p>
+  <p style="text-align:center; max-width:900px; margin:auto; padding:0 10px;">We blend aerospace engineering, creative design, and flawless execution to deliver bold, emotionally resonant drone shows.</p>
   <div class="grid" style="margin-top:40px;">
-    <div class="card"><h3>Advanced Formation Technology</h3><p>Intelligent navigation systems ensure smooth transitions and perfect choreography.</p></div>
-    <div class="card"><h3>Brilliant LED Illumination</h3><p>High‑intensity, full‑spectrum LEDs visible from long distances.</p></div>
-    <div class="card"><h3>Customized Show Design</h3><p>Animations, storylines, and branding designed specifically for your event.</p></div>
-    <div class="card"><h3>Scalable Fleet Size</h3><p>From 50 to 500+ drones depending on your vision and venue.</p></div>
-    <div class="card"><h3>Comprehensive Safety Protocols</h3><p>Certified pilots, redundancy systems, and real‑time monitoring.</p></div>
+    <div class="card" style="background:#1a1f3c;"><h3>Advanced Formation Technology</h3><p>Intelligent navigation systems ensure smooth transitions and perfect choreography.</p></div>
+    <div class="card" style="background:#1a1f3c;"><h3>Brilliant LED Illumination</h3><p>High‑intensity, full‑spectrum LEDs visible from long distances.</p></div>
+    <div class="card" style="background:#1a1f3c;"><h3>Customized Show Design</h3><p>Animations, storylines, and branding designed specifically for your event.</p></div>
+    <div class="card" style="background:#1a1f3c;"><h3>Scalable Fleet Size</h3><p>From 50 to 500+ drones depending on your vision and venue.</p></div>
+    <div class="card" style="background:#1a1f3c;"><h3>Comprehensive Safety Protocols</h3><p>Certified pilots, redundancy systems, and real‑time monitoring.</p></div>
   </div>
 </section>
 
@@ -67,19 +383,77 @@
 
 <section style="background:#f7f7f7;">
   <h2>Best Value Drone Shows in the Philippines</h2>
-  <p style="text-align:center; max-width:900px; margin:auto;">We deliver premium‑quality drone light shows with competitive local pricing—without compromising safety, creativity, or impact.</p>
+  <p style="text-align:center; max-width:900px; margin:auto; padding:0 10px;">We deliver premium‑quality drone light shows with competitive local pricing—without compromising safety, creativity, or impact.</p>
 </section>
 
 <section style="text-align:center;">
-  <h2>Let’s Illuminate Your Story</h2>
-  <p>Bring your vision to life with an unforgettable drone light show anywhere in the Philippines.</p>
-  <a class="cta" href="tel:+639176374581">Call Mushroom Now</a>
+  <h2>Let's Illuminate Your Story</h2>
+  <p style="margin-bottom:25px;">Bring your vision to life with an unforgettable drone light show anywhere in the Philippines.</p>
+  <div class="contact-info">
+    <a class="cta" href="tel:+639176374581">
+      <i class="fas fa-phone-alt"></i> Call Roland Now
+    </a>
+    <a href="mailto:info@skydroneservices.ph" style="color:#ffd000;">
+      <i class="fas fa-envelope"></i> Email Us
+    </a>
+  </div>
 </section>
 
 <footer>
-  <p>SkyDrone Services – Precision, Innovation & Spectacle Above Every Crowd</p>
-  <p>📞 <a href="tel:+639176374581">+63 917 637 4581</a></p>
+  <div class="footer-content">
+    <div class="footer-main">
+      <p>SkyDrone Services – Precision, Innovation & Spectacle Above Every Crowd</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="copyright-section">
+      <p class="copyright">© 2025 by Dimax Technologies Center</p>
+      <p class="powered-by">Powered and secured by RP8</p>
+      <a href="tel:+639176374581" style="color:#ffd000; display:block; margin-top:10px;">
+        <i class="fas fa-phone"></i> +63 917 637 4581
+      </a>
+    </div>
+  </div>
 </footer>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    
+    // If needed for future mobile navigation
+    menuToggle.addEventListener('click', function() {
+      alert('Mobile menu will be added here. For now, please use the contact links.');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if(targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+    
+    // Add current year to copyright (optional)
+    const copyrightYear = document.querySelector('.copyright');
+    if(copyrightYear) {
+      copyrightYear.innerHTML = copyrightYear.innerHTML.replace('2025', new Date().getFullYear());
+    }
+  });
+</script>
 
 </body>
 </html>
